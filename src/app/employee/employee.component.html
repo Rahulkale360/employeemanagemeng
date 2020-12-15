@@ -1,0 +1,39 @@
+<!-- --------------------  Search box, Button for removing employess , Title --------------------   -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-3">
+      <h3>{{ labels.EMPLOYEES }}</h3>
+    </div>
+
+    <div class="col-4">
+      <button class="btn btn-success" (click)="removeDevelopmentEmployees()">
+        Remove Development Employees
+      </button>
+    </div>
+
+    <div class="col-5">
+      <div class="input-icons row">
+        <i class="fa fa-search icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          [(ngModel)]="searchText"
+          (keydown)="searchEmployees()"
+          (search)="searchEmployees()"
+          class="search-control"
+          placeholder="Search"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --------------------  Search box, Button for removing employess , Title end --------------------   -->
+
+<!----------------------------   Employee grid ------------------------------------------- --------------   -->
+<div class="container">
+  <app-grid
+    #gridComponent
+    [dataSource]="employees"
+    [columns]="columns"
+  ></app-grid>
+</div>
+<!----------------------------   Employee grid end------------------------------------------- --------------   -->
